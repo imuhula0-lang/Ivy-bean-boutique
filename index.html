@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bean Boutique | Freshly Roasted. Enjoyed Together.</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+    <a class="logo" href="index.html" aria-label="Bean Boutique home">
+        Bean
+       <img class="logo-bean" src="Images/coffee_bean.jpg" alt="">
+        Boutique
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav">Menu</button>
+
+    <!--This is the main navigation bar containing the links to the 6 pages-->
+    <nav id="mainNav" class="main-nav" aria-label="Main navigation">
+        <ul>
+            <!--The "current" class has been used to highlight the page on which the visitor is on-->
+            <li><a href=" index.html " class="current" aria-current="page">Home</a></li>
+            <li><a href="brewing_equipment.html">Brewing Equipment</a></li>
+            <li><a href="coffee_selection.html">Coffee Selection</a></li>
+            <li><a href="events_workshops.html">Events and Workshops</a></li>
+            <li><a href="offers_subscriptions.html">Special Offers and Subscriptions</a></li>
+            <li><a href="shopping_cart.html">Shopping Cart (<span id="cartCount">0</span>)</a></li>
+        </ul>
+    </nav>
+
+    <!--This is division class is an on-page search box-->
+    <div class="search-box">
+        <label for="pageSearch" class="visually-hidden">Search</label>
+        <input type="search" id="pageSearch" placeholder="Search...">
+    </div>
+</header>
+
+<!--Main content for the index page-->
+<main>
+    <!--A hero slideshow featuring events and products-->
+    <section class="hero" aria-label="Our Products and Events">
+    <!--Slide 1: welcome message-->
+    <div class="slide active"> 
+        <img src="Images/coffee_beans_in_a_cup.jpg" alt="Freshly roasted coffee beans!">
+        <div class="slide-text">
+            <h1>Freshly Roasted. Enjoyed Together.</h1>
+            <a class="btn" href="coffee_selection.html">Shop our Bright, Bold, Unforgettable Coffee </a>
+            <a class="btn btn-light" href="events_workshops.html">Get an Invite to Our Upcoming Events</a>
+        </div>
+    </div>
+
+    <!--Slide 2: Our featured products-->
+    <div class="slide">
+        <img src="Images/latte_coffee.jpg" alt="A latte with love art">
+        <div class="slide-text">
+            <h2>Rich and complex latte with undertones that linger elegantly.</h2>
+            <a class="btn" href="coffee_selection.html">Try it Today</a>
+        </div>
+    </div>
+
+    <!--Slide 3: Our Upcoming Events-->
+    <div class="slide">
+        <img src="Images/coffee_tasting.jpg" alt="People at one of our coffee tasting workshops">
+        <div class="slide-text">
+            <h2>Join Us for Our Next Kenya AA Tasting</h2>
+            <a class="btn" href="events_workshops.html">Reserve Your Seat.</a>
+        </div>
+    </div>
+
+
+    <!--Previous and next arrows work with either a mouse or keyboard navigation keys-->
+    <button class="slide-btn prev" id="prevSlide" aria-label="Previous slide">&#10094;</button>
+    <button class="slide-btn next" id="nextSlide" aria-label="Next slide">&#10095;</button>
+</section>
+
+<!--Section 1: What we Offer at Bean Boutique-->
+<section class="section">
+    <h2>What We Offer</h2>
+    <div class="grid grid-3">
+        <!--Card 1: Our coffee-->
+        <article class="card searchable">
+            <img src="Images/coffee_bags.jpg" alt="Bean Boutique coffee satchets.">
+            <div class="card-body">
+                <h3>Our Different Blends</h3>
+                <p>Weekly roasted blends and single origins.</p>
+                <a class="btn" href="coffee_selection.html">Explore</a>
+            </div>
+        </article>
+
+        <!--Card 2: Our Brewing Equipment-->
+        <article class="card searchable">
+            <img src="Images/french_press.jpg" alt="A French Press brewing equipment">
+            <div class="card-body">
+                <h3>Brewing Equipment</h3>
+                <p>All you need for a good old home brew.</p>
+                <a class="btn" href="brewing_equipment.html">Explore</a>
+            </div>
+        </article>
+
+        <!--Card 3: Our Events and Workshops-->
+        <article class="card searchable">
+            <img src="Images/brewing_class.jpg" alt="A barista leading a brewing class">
+            <div class="card-body">
+                <h3>Events and Workshops</h3>
+                <p>Tasting and Meet-the-Roaster nights.</p>
+                <a class="btn" href="events_workshops.html">Explore</a>
+            </div>
+        </article>
+    </div>
+</section>
+
+<!--Section 2: Our Featured Blends-->
+<section class="section section-alt">
+    <h2>Our Featured Blends</h2>
+    <div class="grid grid-4">
+        <!--First product-->
+        <article class="card searchable">
+            <img src="Images/blend_bag.jpg" alt="Our House Blend Coffee Bag.">
+            <div class="card-body">
+                <h3>House Blend</h3>
+                <p class="price">Ksh. 200.00</p>
+                <button class="btn add-to-cart" data-name="House Blend" data-price="200.00">Add to cart</button>
+            </div>
+            
+        </article>
+
+        <!--Second product-->
+        <article class="card searchable">
+            <img src="Images/Kenya_AA.jpg" alt="Our Kenya AA Coffee Bag.">
+            <div class="card-body">
+                <h3>Kenya AA</h3>
+                <p class="price">Ksh. 250.00</p>
+                <button class="btn add-to-cart" data-name="Kenya AA" data-price="250.00">Add to cart</button>
+            </div>
+            
+        </article>
+
+        <!--Third product-->
+        <article class="card searchable">
+            <img src="Images/Dark_Roast.jpg" alt="Our Dark Roast Espresso Coffee Bag.">
+            <div class="card-body">
+                <h3>Dark Roast Espresso</h3>
+                <p class="price">Ksh. 300.00</p>
+                <button class="btn add-to-cart" data-name="Dark Roast Espresso" data-price="300.00">Add to cart</button>
+            </div>
+            
+        </article>
+
+        <!--Fourth product-->
+        <article class="card searchable">
+            <img src="Images/specialty_coffee.jpg" alt="Our Specialty Coffee Bag.">
+            <div class="card-body">
+                <h3>Specialty Coffee</h3>
+                <p class="price">Ksh. 500.00</p>
+                <button class="btn add-to-cart" data-name="Specialty Coffee" data-price="500.00">Add to cart</button>
+            </div>
+            
+        </article>
+    </div>
+</section>
+
+<!--Section 3: Our Incredible Story-->
+<section class="section">
+    <div class="story searchable">
+        <img src="Images/people_enjoying_coffee.jpg" alt="Friends having coffee.">
+        <div>
+            <h2>Our Story</h2>
+            <p>From one small neighbourhood shop to a global online family. A journey fuelled by passion, people and a perfect blend. </p>
+            <a class="btn" href="index.html">Learn More</a>
+        </div>
+    </div>
+</section>
+
+<!--Section 4: Subscribe and Save Banner-->
+<section class="section banner">
+    <h2>Subscribe & Save!</h2>
+    <ol class="steps">
+        <li>Pick a Coffee</li>
+        <li>We roast it</li>
+        <li>You receive it at your door</li>
+    </ol>
+    <a class="btn btn-light" href="offers_subscriptions.html">View our plans.</a>
+</section>
+
+<!--Section 5: Find us here-->
+<section class="section">
+    <h2>Find Us Here</h2>
+    <div class="find-us-here">
+        <iframe
+            title="Map to Bean Boutique Location"
+            src="https://www.google.com/maps?q=Kisumu&output=embed"
+            loading="lazy"
+            allowfullscreen
+            style="border: 0;"
+            height="450"
+            width="600">
+        </iframe>
+
+        <!--Bean Boutique Contact details-->
+        <address>
+            <strong>Bean Boutique</strong> <br>
+            240 Kisumu - Nairobi Highway <br>
+            Open daily, 6:00am to 8:00pm <br>
+            <a href="mailto:hello@beanboutique.com">hello@beanboutique.com</a>
+        </address>
+    </div>
+</section>
+</main>
+
+<!--Footer-->
+<footer class="site-footer">
+    <div class="footer-grid">
+        <!--Column 1 with quick links to the other pages-->
+        <div>
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="coffee_selection.html">Coffee Selection</a></li>
+                <li><a href="brewing_equipment.html">Brewing Equipment</a></li>
+                <li><a href="events_workshops.html">Events and Workshops</a></li>
+                <li><a href="offers_subscriptions.html">Special Offers and Subscriptions</a></li>
+            </ul>
+        </div>
+
+        <!--Column 2 with Bean Boutique's Contact Details-->
+        <div>
+            <h3>Contact Us</h3>
+            <p>hello@beanboutique.com</p>
+        </div>
+
+        <!--Column 3 with Social Media Links-->
+        <div>
+            <h3>Follow Us</h3>
+            <ul>
+                <li><a href="#beanboutique">Instagram</a></li>
+                <li><a href="#beanboutique">Facebook</a></li>
+            </ul>
+        </div>
+    </div>
+    <p>&copy; 2026 Bean Boutique.</p>
+</footer>
+
+<!--Modal Popoup for every first time visit-->
+<div class="modal" id="welcomeModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-box">
+        <button class="modal-close" id="closeModal" aria-label="Close popup">&times;</button>
+
+        <a class="logo" href="index.html" aria-label="Bean Boutique home">
+        Bean
+       <img class="logo-bean" src="Images/coffee_bean.jpg" alt="">
+        Boutique
+        </a>
+        
+        <h2 id="modalTitle"> Get 15% off your first order</h2>
+        <form action="mailto:hello@beanboutique.com" method="post" enctype="text/plain">
+            <label for="modalEmail">Email address</label> <br>
+            <input type="email" id="modalEmail" name="email" required> 
+            <button type="submit" class="btn">Sign Me Up</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

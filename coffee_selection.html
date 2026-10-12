@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse our unique blends and single origins, with brewing methods and tasting notes.">
+    <title>Coffee Selection | Bean Boutique</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+    <a class="logo" href="index.html" aria-label="Bean Boutique home">
+        Bean
+       <img class="logo-bean" src="Images/coffee_bean.jpg" alt="">
+        Boutique
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav">Menu</button>
+
+    <!--This is the main navigation bar containing the links to the 6 pages-->
+    <nav id="mainNav" class="main-nav" aria-label="Main navigation">
+        <ul>
+            <!--The "current" class has been used to highlight the page on which the visitor is on-->
+            <li><a href=" index.html " class="current" aria-current="page">Home</a></li>
+            <li><a href="brewing_equipment.html">Brewing Equipment</a></li>
+            <li><a href="coffee_selection.html">Coffee Selection</a></li>
+            <li><a href="events_workshops.html">Events and Workshops</a></li>
+            <li><a href="offers_subscriptions.html">Special Offers and Subscriptions</a></li>
+            <li><a href="shopping_cart.html">Shopping Cart (<span id="cartCount">0</span>)</a></li>
+        </ul>
+    </nav>
+
+    <!--This division class is an on-page search box-->
+    <div class="search-box">
+        <label for="pageSearch" class="visually-hidden">Search</label>
+        <input type="search" id="pageSearch" placeholder="Search...">
+    </div>
+</header>
+
+<!--Main content of the coffee selection page-->
+
+<main>
+    <h1 class="page-title">Our Incredible Coffee Selection</h1>
+    <p class="page-intro">Weekly roasted unique blends and single-origin coffees. Try searching for a brewing method or a flavour!</p>
+
+    <!--Section 1: Our Coffee Catalogue starts here-->
+
+    <section class="coffee-list" aria-label="Coffee Catalogue">
+        <div class="grid grid-3" id="catalogue">
+            <article class="coffee-card">
+                <img src="Images/blend_bag.jpg" alt="Our House Blend Coffee Bag">
+                <div class="card-info">
+                    <h2 class="card-title">House Blend</h2>
+                    <p class="In-house blend | Medium roast"></p>
+                    <p>Our everyday coffee. It is balanced and smooth. Can be enjoyed at any time.</p>
+                    <p><strong>Flavour notes:</strong>Roasted nuts, caramel and milk chocolate</p>
+                    <p><em>Brewing tip:</em>Drip, French press, espresso</p>
+                
+                    <p class="price">Ksh 200</p>
+                    <button class="btn add-to-cart" data-name="House Blend" data-price="200">Add to cart</button>
+                </div>
+            </article>
+
+
+            <article class="coffee-card">
+                <img src="Images/Kenya_AA.jpg" alt="Kenya AA Coffee Bag">
+                <div class="info">
+                    <h2>Kenya AA</h2>
+                    <p class="Single origin | Light-medium roast"></p>
+                    <p>A bright, wine-like finish bursting with blackcurrant and citrus notes, finished with a clean, crisp aftertaste.</p>
+                    <p><strong>Tastes like:</strong>Blackcurrant, citrus and brown sugar</p>
+                    <p><em>Best brewed with:</em>Pour-over or AeroPress</p>
+            
+                    <p class="price">Ksh 250</p>
+                    <button class="btn add-to-cart" data-name="Kenya AA" data-price="Ksh 250">Add to cart</button>
+                </div>
+            </article>
+
+
+            <article class="coffee-card">
+                <img src="Images/Dark_Roast.jpg" alt="Midnight Espresso Coffee Bag">
+                <div class="info">
+                    <h2>Midnight Espresso</h2>
+                    <p class="Blend | Dark roast"></p>
+                    <p>A bold, rich blend made for espresso and milk lovers.</p>
+                    <p><strong>Notes:</strong>Dark chocolate, cocoa, smoky finish</p>
+                    <p><em>Brewing:</em>Moka pot or Espresso</p>
+                    <p class="price">Ksh 300</p>
+                    <button class="btn add-to-cart" data-name="Midnight Espresso" data-price="Ksh 300">Add to cart</button>
+                </div>
+            </article>
+
+
+            <article class="coffee-card">
+                <img src="Images/highland_sunrise.jpg" alt="Highland Sunrise Coffee Bag">
+                <div class="info">
+                    <h2>Highland Sunrise</h2>
+                    <p>Contains a lively acidity balanced by silky texture, offering flavours of ripe fruit and a sparkling finish. Great for your slow mornings.</p>
+                    <p><strong>Flavours:</strong>Fruity, honey, silky finish</p>
+                    <p><em>Best brewed with:</em>Pour-over or filter machine</p>
+                    <p class="price">Ksh 150</p>
+                    <button class="btn add-to-cart" data-name="Highland Sunrise" data-price="Ksh 150">Add to cart</button>
+                </div>
+            </article>
+
+
+            <article class="coffee-card">
+                <img src="Images/volcanic_soil.jpg" alt="Volcanic Soil Blend Coffee Bag">
+                <div class="info">
+                    <h2>Volcanic Soil Blend</h2>
+                    <p>Rich and complex, with undertones of bergamot and floral hints that linger elegantly.</p>
+                    <p><strong>Taste profile:</strong>Lemon, jasmine, bergamot tea</p>
+                    <p><em>Brewing idea:</em>Pour-over or Chemex</p>
+                    <p class="price">Ksh 350</p>
+                    <button class="btn add-to-cart" data-name="Volcanic Soil Blend" data-price="Ksh 350">Add to cart</button>
+                </div>
+            </article>
+
+
+            <article class="coffee-card">
+                <img src="Images/specialty_coffee.jpg" alt="Specialty Coffee Bag">
+                <div class="info">
+                    <h2>Our specialty blend</h2>
+                    <p>Creamy with low acidity, a great choice for a cold brew.</p>
+                    <p><strong>Tasting notes:</strong>Hazel nut, cocoa and light spice</p>
+                    <p><em>Brewing idea:</em>Cold brew, French press, espresso</p>
+                    <p class="price">Ksh 500</p>
+                    <button class="btn add-to-cart" data-name="Volcanic Soil Blend" data-price="Ksh 500">Add to cart</button>
+                </div>
+            </article>
+
+        </div>
+
+        <p class="no-results" id="noResults" role="status" hidden>No coffees match your search.</p>
+    </section>
+
+    <!--Section 2: Plugins section-->
+    <section class="section section-alt">
+        <h2>Join the conversation</h2>
+        <div class="plugin-grid">
+
+            <div class="plugin-box">
+                <h3>Follow us on Facebook</h3>
+                <iframe
+                title="Bean Boutique Facebook page feed"
+                src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ffacebook&amp;tabs=timeline&amp;width=340&amp;height=450&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=false"
+                width="340"
+                height="450"
+                loading="lazy"
+                allow="encrypted-media"></iframe>
+            </div>
+
+            <div class="plugin-box">
+                <h3>Ask our roaster</h3>
+                <form class="form" action="mailto:hello@beanboutique.com" method="post" enctype="text/plain">
+                    <div class="form-field">
+                        <label for="askName">Name</label>
+                        <input type="text" id="askName" name="name" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="askEmail">Email address</label>
+                        <input type="email" id="askEmail" name="email" required>
+                    
+                    </div>
+
+                    <div class="form-field">
+                        <label for="askQuestion">Your question</label>
+                        <textarea name="question" id="askQuestion" rows="4" required></textarea>
+                    </div>
+
+                    <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
+                    <button type="submit" class="btn">Send question</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+<!--Footer-->
+<footer class="site-footer">
+    <div class="footer-grid">
+        <!--Column 1 with quick links to the other pages-->
+        <div>
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="coffee_selection.html">Coffee Selection</a></li>
+                <li><a href="brewing_equipment.html">Brewing Equipment</a></li>
+                <li><a href="events_workshops.html">Events and Workshops</a></li>
+                <li><a href="offers_subscriptions.html">Special Offers and Subscriptions</a></li>
+            </ul>
+        </div>
+
+        <!--Column 2 with Bean Boutique's Contact Details-->
+        <div>
+            <h3>Contact Us</h3>
+            <p>hello@beanboutique.com</p>
+        </div>
+
+        <!--Column 3 with Social Media Links-->
+        <div>
+            <h3>Follow Us</h3>
+            <ul>
+                <li><a href="#beanboutique">Instagram</a></li>
+                <li><a href="#beanboutique">Facebook</a></li>
+            </ul>
+        </div>
+    </div>
+    <p>&copy; 2026 Bean Boutique.</p>
+</footer>
+    
+</body>
+</html>

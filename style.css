@@ -1,0 +1,481 @@
+/* Bean Boutique style sheet*/
+
+/*Colours and Font for the Bean Boutique website*/
+:root {
+  --espresso: black; /* For the footer and header*/
+  --roast: saddlebrown; /* For the banner and the labels */
+  --foam: linen; /* For the Bean Boutique page background */
+  --sage: darkolivegreen; /* For the buttons */
+  --sage-dark: darkgreen; /* For the button hover and the prices */
+  --ink: black; /* For the text */
+  --white: white;
+
+  /* Round corners and shadow softens the website look */
+  --radius: 14px;
+  --shadow: 0 6px 18px rgba(43, 27, 20, 0.15);
+  --shadow-hover: 0 12px 28px rgba(43, 27, 20, 0.25);
+  /* I chose a simple font for the body and an elegant font for the headings */
+
+  --font-head: Georgia, "Times New Roman" serif;
+  --font-body: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* This base style resets everything in the Bean Boutique website so that they feel consistent */
+* {box-sizing: border-box;}
+
+/* Basic Bean Boutique page setup */
+body {
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 0;
+  background: var(--foam);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+/* This style makes sure that images do not overflow */
+img {max-width: 100%; display: block;}
+
+/* For the headings with an elegant looking font */
+h1, h2, h3 {
+  font-family: var(--font-head);
+  line-height: 1.2;
+  margin: 10px 0;
+}
+
+/* For the page links so that they blend in with everything naturally */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* This style caters for accessibility with clear, focused outlines */
+:focus-visible {outline: 3px solid var(--sage); outline-offset: 2px;}
+
+/* This style is for elements that are hidden, for example cart items which stay hidden */
+[hidden] {display: none  !important;}
+
+/* This style is for scrren reader texts */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* For the header and navigation. The header is sticky so that it can always stay visible */
+.site-header {
+  position: sticky;
+  top: 0;
+  background: var(--espresso);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* The logo of my website is Bean Boutique, with coffee beans in the middle of bean and boutique */
+.logo {
+  display: flex; /* This puts the bean image and the text in one row */
+  align-items: center;
+  gap: 0.4rem;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.logo-bean {
+  width: 1.6rem;
+  height: 1.6rem;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+
+}
+
+.logo:hover .logo-bean {
+  transform: rotate(20deg);
+}
+
+.bean-body {fill: darkolivegreen;}
+.bean-crease {
+  fill: none;
+  stroke: black;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+}
+
+/* The main navigation menu */
+
+.main-nav {
+  margin-left: auto;
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 0.25rem;
+}
+
+.main-nav a:hover {
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+.main-nav a.current {
+  border-bottom-color: var(--sage);
+  background: rgba(255, 255, 255, 0.08); /* This style is used to highlights the current page a visitor is on */
+  color: white;
+}
+
+/* For the buttons */
+.btn {
+  display: inline-block;
+  background: var(--sage);
+  color: var(--white);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  border-radius: 999px;
+  transition: background 0.2s, transform 0.2s;
+  font-weight: 600;
+}
+
+/* This hover effect makes the buttons to pop */
+
+.btn:hover {
+  background: var(--sage-dark);
+  transform: translateY(-2px);
+}
+
+/* This is a light version for the softer sections */
+
+.btn-light {
+  background: var(--foam);
+  color: var(--espresso);
+}
+
+.btn-light:hover {
+  background: var(--white);
+}
+
+/* On mobile phones, this style shows a toggle button */
+.menu-toggle {
+  display: none;
+  margin-left: auto;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--foam);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--foam);
+  cursor: pointer;
+}
+
+/* This style is for the search box. The search box should expand when it is focused on */
+.search-box input {
+  width: 9rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  transition: width 0.4s ease, box-shadow 0.4s ease;
+}
+
+.search-box input:focus {
+  width: 15rem;
+  box-shadow: 0 0 0 3px var(--sage);
+}
+
+/* This style is for the sections in the homepage */
+.hero {
+  position: relative;
+  height: 65vh;
+  background: var(--roast);
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slide-text {
+  position: absolute;
+  left: 8%;
+  bottom: 15%;
+  max-width: 34rem;
+  padding: 1.2rem 1.5rem;
+  border-radius: var(--radius);
+  background: rgba(0, 0, 0, 0.7);
+  color: var(--foam);
+}
+
+/* This style is for the cards in my pages. The cards in my webpage look like menu boards with round corners, they lift gently when hovered and they have soft shadows */
+.card {
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: var(--shadow);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+.card img {width: 100%;
+  height: 190px;
+  object-fit: cover;
+  background: var(--roast);
+}
+
+.card-body {
+  padding: 1rem 1.2rem 1.4rem;}
+
+.card-body h3 {margin: 0 0 0.4rem;}
+
+.equipment-card, .coffee-card, .event-card {
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: var(--shadow);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.equipment-card:hover, .coffee-card:hover, .event-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+.equipment-card img, .coffee-card img, .event-card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  background: var(--roast);
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.price {
+  font-weight: 700;
+  color: var(--sage-dark);
+}
+
+/* This style is for the footer of Bean Boutique */
+.site-footer {
+  padding: 2.5rem 1.5rem 1rem;
+  background: var(--espresso);
+  color: var(--foam);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-grid a:hover {color: var(--sage);}
+
+.copyright {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* This style is for modal popup offering visotors a 15% discount for their first visit */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: flex-start; /* This style centers the modal vertically */
+  justify-content: center; /* This style centers the modal horizontally */
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* This style opens the modal */
+.modal.open{display: flex;}
+
+.modal-box {
+  max-width: 26rem;
+  padding: 2rem;
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: var(--shadow-hover);
+  text-align: center; 
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.8rem;
+  background: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.modal .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.modal .logo-bean {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin: 0 0.5rem;
+}
+
+/* This style is for all the page headings */
+.page-title {
+  font-size: 2.2rem;
+  margin: 0;
+  padding: 2.5rem 1.5rem 0;
+}
+
+/* This style covers the shopping cart page */
+.cart-wrap {
+  background: var(--white);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+}
+
+.cart-table th {
+  background: var(--espresso);
+  color: var(--foam);
+}
+
+.cart-summary {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.cart-total {
+  font-family: var(--font-head);
+  font-size: 1.6rem;
+}
+
+/* This style is the coffee selection page and the brewing equipment page */
+/* The detail boxes are like tasting notes which have been scribbled on cards */
+.details {
+  border-left: 4px solid var(--sage);
+  background: var(--foam);
+  border-radius: 0 8px 8px 0;
+  padding: 0.8rem;
+}
+
+
+/* This style caters for the events page and the forms */
+/* The events card contain date badges just like posters on a wall */
+.date-badge {
+  background: var(--espresso);
+  color: var(--foam);
+  box-shadow: var(--shadow);
+}
+
+/* This style is for the base grid system */
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.grid-2 {grid-template-columns: repeat(2, 1fr);}
+
+.grid-3 {grid-template-columns: repeat(3, 1fr);}
+
+.grid-4 {grid-template-columns: repeat(4, 1fr);}
+
+/* The forms are quite simple and welcoming */
+
+.form-field label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+}
+
+.form-field input, .form-field textarea, .form-field select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid saddlebrown;
+  border-radius: 8px;
+  background: var(--white);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-field input:focus,
+.form-field textarea:focus,
+.form-field select {
+  border-color: var(--sage);
+  box-shadow: 0 0 0 3px rgba(85, 107, 47, 0.3);
+}
+
+/* This style is for special offers and subscriptions page */
+.promo {
+  border-top: 6px solid var(--sage) ;
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.tier.featured {border-color: var(--sage);}
+
+.tier-price {
+  font-family: var(--font-head);
+  font-size: 2.2rem;
+  color: var(--roast);
+}
+
+/* This style caters for the websites responsive design so that the Bean Boutique website rearranges itself on phones and tablets */
+/* It then displays stacked sections, few columns and a simple layout */
+@media (max-width: 900px) {
+  .grid-4 {grid-template-columns: repeat(2, 1fr);}
+  .grid-3 {grid-template-columns: repeat(2, 1fr);}
+  .grid-2 {grid-template-columns: repeat(2, 1fr);}
+  .footer-grid {grid-template-columns: repeat(2, 1fr);}
+}
+
+@media (max-width: 640px) {
+  .menu-toggle {display: block;}
+  .main-nav {display: none;}
+  .main-nav .open {display: block;}
+  .grid-4, .grid-3, .grid-2 {grid-template-columns: 1fr;}
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *{
+    transition: none !important; 
+    animation: none !important;
+  }
+}
+
+
+
+
+
+
+

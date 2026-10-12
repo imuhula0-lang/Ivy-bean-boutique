@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bean Boutique's brewing equipment, containing detailed descriptions and usage tips.">
+    <title>Brewing Equipment | Bean Boutique</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+    <a class="logo" href="index.html" aria-label="Bean Boutique home">
+        Bean
+       <img class="logo-bean" src="Images/coffee_bean.jpg" alt="">
+        Boutique
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav">Menu</button>
+
+    <!--This is the main navigation bar containing the links to the 6 pages-->
+    <nav id="mainNav" class="main-nav" aria-label="Main navigation">
+        <ul>
+            <!--The "current" class has been used to highlight the page on which the visitor is on-->
+            <li><a href=" index.html " class="current" aria-current="page">Home</a></li>
+            <li><a href="brewing_equipment.html">Brewing Equipment</a></li>
+            <li><a href="coffee_selection.html">Coffee Selection</a></li>
+            <li><a href="events_workshops.html">Events and Workshops</a></li>
+            <li><a href="offers_subscriptions.html">Special Offers and Subscriptions</a></li>
+            <li><a href="shopping_cart.html">Shopping Cart (<span id="cartCount">0</span>)</a></li>
+        </ul>
+    </nav>
+
+    <!--This is division class is an on-page search box-->
+    <div class="search-box">
+        <label for="pageSearch" class="visually-hidden">Search</label>
+        <input type="search" id="pageSearch" placeholder="Search...">
+    </div>
+</header>
+
+<main>
+
+    <!--Brewing Equipment page heading-->
+    <h1 class="page-title">Brewing Equipment</h1>
+    <p class="page-intro">Everything you need for a good old home brew, from french presses to espresso machines. Each product contains simple tips to help you get started.</p>
+
+    <!--Section 1 containing equipment catalogue with usage tips and details-->
+    <div class="equipment-list">
+        <div class="grid grid-3">
+
+            <!--The first product: A French Press-->
+            <article class="equipment-card">
+                <img src="Images/french_press.jpg" alt="A glass French press">
+                <div class="info">
+                    <h2>French Press</h2>
+                    <p>A classic glass brewer. Your coffee steeps in hot water, giving you a rich, full-bodied cup.</p>
+                    <p><strong>Best for:</strong>Medium to coarse grind</p>
+                    
+                    <div class="tips">
+                        <h3>How to Use</h3>
+                        <ul>
+                            <li>Use 1 part coffee to 15 parts of water.</li>
+                            <li>Steep your coffee for about 4 minutes, then press slowly.</li>
+                            <li>Pour your coffee out immediately so it doesn't get bitter.</li>
+                        </ul>
+                    </div>
+                    <p class="price">Ksh 1000</p>
+                    <button class="btn add-to-cart" data-name="French Press" data-price="1000">Add to cart</button>
+                </div>
+            </article>
+
+
+            <!--The second product: A Pour over Dripper-->
+            <article class="equipment-card">
+                <img src="Images/pour-over-dripper.jpg" alt="A ceramic pour-over dripper">
+                <div class="info">
+                    <h2>Pour-over Dripper</h2>
+                    <p>A simple ceramic cone, giving you full control of your brewing. It produces a clean and bright cup, showing of light roasts.</p>
+                    <p><strong>Includes:</strong>Dripper + Filters</p>
+                    
+                    <div class="tips">
+                        <h3>How to Use</h3>
+                        <ul>
+                            <li>First rinse the filter using hot water.</li>
+                            <li>Pour a small amount of your coffee and let it "bloom" for about 30 seconds.</li>
+                            <li>Pour water over it in small circles until you reach your desired amount.</li>
+                        </ul>
+                    </div>
+                    <p class="price">Ksh 700</p>
+                    <button class="btn add-to-cart" data-name="Pour-over Dripper" data-price="700">Add to cart</button>
+                </div>
+            </article>
+
+            <!--The third product: An Espresso machine-->
+            <article class="equipment-card">
+                <img src="Images/espresso_machine.jpg" alt="A home espresso machine">
+                <div class="info">
+                    <h2>Espresso Machine</h2>
+                    <p>Make espresso, lattes and capuccinos in your kitchen with this compact home espresso machine.</p>
+                    <p><strong>Features:</strong>Steam wand, pressure controls</p>
+                    
+                    <div class="tips">
+                        <h3>How to Use</h3>
+                        <ul>
+                            <li>Warm up the machine for about 15 minutes before brewing.</li>
+                            <li>Aim for a shot which takes about 25 to 30 seconds.</li>
+                            <li>Make sure to wipe the steam wand after every use.</li>
+                        </ul>
+                    </div>
+                    <p class="price">Ksh 15,000</p>
+                    <button class="btn add-to-cart" data-name="Espresso Machine" data-price="15000">Add to cart</button>
+                </div>
+            </article>
+
+
+            <!--The fourth product: A Burr Grinder-->
+            <article class="equipment-card">
+                <img src="Images/burr-grinder.jpg" alt="A black burr coffee grinder">
+                <div class="info">
+                    <h2>Burr Grinder</h2>
+                    <p>Grinds coffee beans for a tasteful cup, from fine espressos to a coarse French press.</p>
+                    <p><strong>Type:</strong>Adjustable burr grinder</p>
+                    <div class="tips">
+                        <h3>How to Use</h3>
+                        <ul>
+                            <li>Grind coffee beans just before you brew.</li>
+                            <li>Grind finely if the coffee tates sour and coarsely if it tastes bitter.</li>
+                            <li>Remove old grounds atleast once a week.</li>
+                        </ul>
+                    </div>
+                    <p class="price">Ksh 4,500</p>
+                    <button class="btn add-to-cart" data-name="Burr Grinder" data-price="4500">Add to cart</button>
+                </div>
+            </article>
+
+
+            <!--The fifth product: An AeroPress-->
+            <article class="equipment-card">
+                <img src="Images/aero_press.jpg" alt="An AeroPress coffee maker">
+                <div class="info">
+                    <h2>AeroPress</h2>
+                    <p>It makes a tasteful cup in 2 minutes. Great for camping and road trips.</p>
+                    <p><strong>Best for:</strong>Travel and single cups</p>
+        
+                    <div class="tips">
+                        <h3>How to Use</h3>
+                        <ul>
+                            <li>Use it upside-down so nothing drips early.</li>
+                            <li>Stir for about 10 seconds, then press gently for about 30 seconds.</li>
+                            <li>You can add hot water for an Americano-style.</li>
+                        </ul>
+                    </div>
+                    <p class="price">Ksh 2200</p>
+                    <button class="btn add-to-cart" data-name="AeroPress" data-price="2200">Add to cart</button>
+                </div>
+            </article>
+
+
+            <!--The sixth product: An Moka pot-->
+            <article class="equipment-card">
+                <img src="Images/moka-pot.jpg" alt="A stovetop moka pot">
+                <div class="info">
+                    <h2>Moka Pot</h2>
+                    <p>This moka pot makes strong, espresso-style coffee without the need for an expensive machine.</p>
+                    <p><strong>Best for:</strong>Medium-fine ground and dark roast</p>
+                    
+                    <div class="tips">
+                        <h3>How to Use</h3>
+                        <ul>
+                            <li>Fill the bottom part with hot water, just below the valve.</li>
+                            <li>Level the coffee gently. Do not tamp it.</li>
+                            <li>Once it boils, take it off the heat.</li>
+                        </ul>
+                    </div>
+                    <p class="price">Ksh 2500</p>
+                    <button class="btn add-to-cart" data-name="Moka pot" data-price="2500">Add to cart</button>
+                </div>
+            </article>
+        </div>
+
+        <p class="no-results" id="noResults" role="status" hidden>No equipment matches your search</p>
+    </div>
+
+
+    <!--A short guide to help customers to choose. I t also links to the coffee selection page-->
+    <section class="section section-alt">
+        <h2>Not sure what to choose?</h2>
+        <div class="grid grid-3">
+            <div class="help-box">
+                <h3>I would like it simple</h3>
+                <p>You can start with a French Press or a Pour-over Dripper. They are both affordable and easy to use.</p>
+            </div>
+
+            <div class="help-box">
+                <h3>I love espresso</h3>
+                <p>You can pair the espresso machine with the burr grinder. Then try out our Midnight Espresso coffee beans.</p>
+            </div>
+
+            <div class="help-box">
+                <h3>I travel a lot</h3>
+                <p>The AeroPress packs small. It brews in 2 minutes. Take it wherever.</p>
+            </div>
+        </div>
+
+        <p><a class="btn" href="coffee_selection.html">Browse our coffee varieties</a></p>
+    </section>
+</main>
+
+<!--A footer, shared across all the 6 pages-->
+<footer class="site-footer">
+    <div class="footer-grid">
+        <!--Column 1 with quick links to the other pages-->
+        <div>
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="coffee_selection.html">Coffee Selection</a></li>
+                <li><a href="brewing_equipment.html">Brewing Equipment</a></li>
+                <li><a href="events_workshops.html">Events and Workshops</a></li>
+                <li><a href="offers_subscriptions.html">Special Offers and Subscriptions</a></li>
+            </ul>
+        </div>
+
+        <!--Column 2 with Bean Boutique's Contact Details-->
+        <div>
+            <h3>Contact Us</h3>
+            <p>hello@beanboutique.com</p>
+        </div>
+
+        <!--Column 3 with Social Media Links-->
+        <div>
+            <h3>Follow Us</h3>
+            <ul>
+                <li><a href="#beanboutique">Instagram</a></li>
+                <li><a href="#beanboutique">Facebook</a></li>
+            </ul>
+        </div>
+    </div>
+    <p>&copy; 2026 Bean Boutique.</p>
+</footer>
+    
+</body>
+</html>

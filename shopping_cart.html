@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your Bean Boutique Shopping Cart">
+    <title>Shopping Cart | Bean Boutique</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+
+    <header class="site-header">
+    <a class="logo" href="index.html" aria-label="Bean Boutique home">
+        Bean
+       <img class="logo-bean" src="Images/coffee_bean.jpg" alt="">
+        Boutique
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav">Menu</button>
+
+    <!--This is the main navigation bar containing the links to the 6 pages-->
+    <nav id="mainNav" class="main-nav" aria-label="Main navigation">
+        <ul>
+            <!--The "current" class has been used to highlight the page on which the visitor is on-->
+            <li><a href=" index.html " class="current" aria-current="page">Home</a></li>
+            <li><a href="brewing_equipment.html">Brewing Equipment</a></li>
+            <li><a href="coffee_selection.html">Coffee Selection</a></li>
+            <li><a href="events_workshops.html">Events and Workshops</a></li>
+            <li><a href="offers_subscriptions.html">Special Offers and Subscriptions</a></li>
+            <li><a href="shopping_cart.html">Shopping Cart (<span id="cartCount">0</span>)</a></li>
+        </ul>
+    </nav>
+
+    <!--This is division class is an on-page search box-->
+    <div class="search-box">
+        <label for="pageSearch" class="visually-hidden">Search</label>
+        <input type="search" id="pageSearch" placeholder="Search...">
+    </div>
+</header>
+
+<main>
+    <h1 class="page-title">Shopping Cart</h1>
+    <p class="page-intro">Your shopping cart items are saved here until you check out or clear them.</p>
+
+    <!--Shopping cart items-->
+    <div class="cart-section">
+
+        <!--A message showing the cart is empty-->
+
+        <div class="cart-empty" id="cartEmpty">
+            <p>No items yet. Add something below to get started.</p>
+        </div>
+
+        <!--A shopping cart table showing where items exist-->
+        <div class="cart-wrap">
+            <table class="cart-table" id="cartTable" hidden>
+                <caption class="visually-hidden">Items in your shopping cart</caption>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+                <tbody id="cartItems"></tbody>
+            </table>
+        </div>
+
+        <!--A summary of the shopping cart-->
+        <div class="cart-summary" id="cartSummary" hidden>
+            <p class="cart-total">Total: <strong id="cartTotal">Ksh 0.00</strong></p>
+            <div class="cart-actions">
+                <button type="button" class="btn btn-light" id="clearCart">Clear</button>
+                <button type="button" class="btn" id="checkoutBtn">Checkout</button>
+            </div>
+        </div>
+
+        <!--The shopping cart checkout message-->
+        <p class="checkout-message" id="checkoutMessage" role="status"></p>
+    </div>
+
+    <!--Adding products to the shopping cart-->
+    <section class="add-products">
+        <h2>Add Items</h2>
+        <div class="grid grid-3">
+
+            <!--House Blend coffee-->
+            <article class="product-card">
+                <img src="Images/blend_bag.jpg" alt="House Blend coffee bag">
+                <div class="info">
+                    <h3>House Blend</h3>
+                    <p class="price">Ksh 200</p>
+                    <button class="btn add-to-cart" data-name="House Blend" data-price="200">Add to cart</button>
+                </div>
+            </article>
+
+
+            <!--Kenya AA coffee-->
+            <article class="product-card">
+                <img src="Images/Kenya_AA.jpg" alt="Kenya AA coffee bag">
+                <div class="info">
+                    <h3>Kenya AA</h3>
+                    <p class="price">Ksh 250</p>
+                    <button class="btn add-to-cart" data-name="Kenya AA" data-price="250">Add to cart</button>
+                </div>
+            </article>
+
+
+            <!--A French Press-->
+            <article class="product-card">
+                <img src="Images/french_press.jpg" alt="A Glass French press">
+                <div class="info">
+                    <h3>French Press</h3>
+                    <p class="price">Ksh 1000</p>
+                    <button class="btn add-to-cart" data-name="French Press" data-price="1000">Add to cart</button>
+                </div>
+            </article>
+        </div>
+
+        <!--Links to full coffee and brewing equipment catalogues-->
+        <p class="keep-shopping">
+            <a href="coffee_selection.html" class="btn">Browse all coffee</a>
+            <a href="brewing_equipment.html" class="btn">Browse all brewing equipment</a>
+        </p>
+    </section>
+</main>
+    
+
+<!--Footer-->
+<footer class="site-footer">
+    <div class="footer-grid">
+        <!--Column 1 with quick links to the other pages-->
+        <div>
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="coffee_selection.html">Coffee Selection</a></li>
+                <li><a href="brewing_equipment.html">Brewing Equipment</a></li>
+                <li><a href="events_workshops.html">Events and Workshops</a></li>
+                <li><a href="offers_subscriptions.html">Special Offers and Subscriptions</a></li>
+            </ul>
+        </div>
+
+        <!--Column 2 with Bean Boutique's Contact Details-->
+        <div>
+            <h3>Contact Us</h3>
+            <p>hello@beanboutique.com</p>
+        </div>
+
+        <!--Column 3 with Social Media Links-->
+        <div>
+            <h3>Follow Us</h3>
+            <ul>
+                <li><a href="#beanboutique">Instagram</a></li>
+                <li><a href="#beanboutique">Facebook</a></li>
+            </ul>
+        </div>
+    </div>
+    <p>&copy; 2026 Bean Boutique.</p>
+</footer>
+</body>
+</html>

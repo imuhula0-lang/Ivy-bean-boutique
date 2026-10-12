@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Special offers and coffee subscription plans from Bean Boutique.">
+    <title>Special Offers and Subscriptions | Bean Boutique</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+
+    <header class="site-header">
+    <a class="logo" href="index.html" aria-label="Bean Boutique home">
+        Bean
+       <img class="logo-bean" src="Images/coffee_bean.jpg" alt="">
+        Boutique
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav">Menu</button>
+
+    <!--This is the main navigation bar containing the links to the 6 pages-->
+    <nav id="mainNav" class="main-nav" aria-label="Main navigation">
+        <ul>
+            <!--The "current" class has been used to highlight the page on which the visitor is on-->
+            <li><a href=" index.html " class="current" aria-current="page">Home</a></li>
+            <li><a href="brewing_equipment.html">Brewing Equipment</a></li>
+            <li><a href="coffee_selection.html">Coffee Selection</a></li>
+            <li><a href="events_workshops.html">Events and Workshops</a></li>
+            <li><a href="offers_subscriptions.html">Special Offers and Subscriptions</a></li>
+            <li><a href="shopping_cart.html">Shopping Cart (<span id="cartCount">0</span>)</a></li>
+        </ul>
+    </nav>
+
+    <!--This is division class is an on-page search box-->
+    <div class="search-box">
+        <label for="pageSearch" class="visually-hidden">Search</label>
+        <input type="search" id="pageSearch" placeholder="Search...">
+    </div>
+</header>
+
+
+<main>
+   <!--The page heading--> 
+   <h1 class="page-title">Special Offers & Subscriptions</h1>
+   <p class="page-intro">Save money on your favourite coffee, or let us deliver fresh coffee to your door anytime.</p>
+
+   <!--Section 1: Special offers and promotions-->
+    <section class="offers">
+        <h2>Our hottest deals</h2>
+        <div class="grid grid-3">
+
+            <!--First offer-->
+            <article class="offer-card">
+                <p class="label">Our New customers</p>
+                <h3>15% off your first order</h3>
+                <p>Sign up with your email and get 15% off coffee or equipment.</p>
+                <a href="index.html" class="btn">Claim discount</a>
+            </article>
+
+        <!--Second offer-->
+            <article class="offer-card">
+                <p class="label">Bundle</p>
+                <h3>A brew at home pack</h3>
+                <p>Buy a French press + A Pour-over Dripper and save Ksh 250.</p>
+                <a href="brewing_equipment.html" class="btn">Shop bundle</a>
+        </article>
+
+        <!--Third offer-->
+            <article class="offer-card">
+                <p class="label">Free shipping</p>
+                <h3>For oders above Ksh 500</h3>
+                <p>Sign up with your email and get 15% off coffee or equipment.</p>
+                <a href="coffee_selection.html" class="btn">Shop coffee</a>
+            </article>
+        </div>
+    </section>
+
+  <!--How the subscriptions work-->  
+  <section class="how-it-works">
+    <h2>How Subscriptions Work</h2>
+    <ol>
+        <li>Pick a plan</li>
+        <li>Choose your favourite coffee beans</li>
+        <li>We roast & deliver to your doorstep</li>
+        <li>Cancel Anytime or Pause</li>
+    </ol>
+  </section>
+
+  <!--The available subscription plans-->
+  <section class="plans">
+    <h2>Choose a plan</h2>
+    <div class="grid grid-3">
+
+        <!--The starter plan-->
+        <article class="plan-card">
+            <h3>Starter</h3>
+            <p class="price">Ksh 250 <span>/month/</span></p>
+            <p>Good for casual coffee drinkers.</p>
+            <ul>
+                <li>1 bag (250g) per month</li>
+                <li>Choose from a variety of blends</li>
+                <li>Delivery is Ksh 150</li>
+                <li>Pause or cancel anytime</li>
+            </ul>
+
+            <button class="btn add-to-cart" data-name="Starter Subscription" data-price="250">Subscribe</button>
+        </article>
+
+
+        <!--The enthusiast plan-->
+        <article class="plan-card featured">
+            <p class="badge">Most popular</p>
+            <h3>Enthusiast</h3>
+            <p class="price">Ksh 500 <span>/month/</span></p>
+            <p>Perfect of you are a daily brewer.</p>
+            <ul>
+                <li>2 bag (250g each) per month</li>
+                <li>CSingle origins or blends</li>
+                <li>Delivery is Free</li>
+                <li>10% off brewing equipment</li>
+                <li>Pause or cancel anytime</li>
+            </ul>
+
+            <button class="btn add-to-cart" data-name="Enthusiast Subscription" data-price="500">Subscribe</button>
+        </article>
+
+
+        <!--The connoisseur plan-->
+        <article class="plan-card">
+            <h3>Connoisseur</h3>
+            <p class="price">Ksh 1000 <span>/month/</span></p>
+            <p>Good for coffee explorers.</p>
+            <ul>
+                <li>4 bag (250g each) per month</li>
+                <li>Choose from rare limited editions first</li>
+                <li>Free Delivery</li>
+                <li>1 free event ticket monthly</li>
+            </ul>
+
+            <button class="btn add-to-cart" data-name="Connoisseur Subscription" data-price="250">Subscribe</button>
+        </article>
+    </div>
+
+    <p class="no-results" id="noResults" hidden>No matches found. Try another word.</p>
+  </section>
+</main>
+
+
+<!--Footer-->
+<footer class="site-footer">
+    <div class="footer-grid">
+        <!--Column 1 with quick links to the other pages-->
+        <div>
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="coffee_selection.html">Coffee Selection</a></li>
+                <li><a href="brewing_equipment.html">Brewing Equipment</a></li>
+                <li><a href="events_workshops.html">Events and Workshops</a></li>
+                <li><a href="offers_subscriptions.html">Special Offers and Subscriptions</a></li>
+            </ul>
+        </div>
+
+        <!--Column 2 with Bean Boutique's Contact Details-->
+        <div>
+            <h3>Contact Us</h3>
+            <p>hello@beanboutique.com</p>
+        </div>
+
+        <!--Column 3 with Social Media Links-->
+        <div>
+            <h3>Follow Us</h3>
+            <ul>
+                <li><a href="#beanboutique">Instagram</a></li>
+                <li><a href="#beanboutique">Facebook</a></li>
+            </ul>
+        </div>
+    </div>
+    <p>&copy; 2026 Bean Boutique.</p>
+</footer>
+    
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Our upcoming brewing classes, coffee tasting and meet-the-roaster at Bean Boutique shop. Register online.">
+    <title>Events and Workshops | Bean Boutique</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+
+    <header class="site-header">
+    <a class="logo" href="index.html" aria-label="Bean Boutique home">
+        Bean
+       <img class="logo-bean" src="Images/coffee_bean.jpg" alt="">
+        Boutique
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav">Menu</button>
+
+    <!--This is the main navigation bar containing the links to the 6 pages-->
+    <nav id="mainNav" class="main-nav" aria-label="Main navigation">
+        <ul>
+            <!--The "current" class has been used to highlight the page on which the visitor is on-->
+            <li><a href=" index.html " class="current" aria-current="page">Home</a></li>
+            <li><a href="brewing_equipment.html">Brewing Equipment</a></li>
+            <li><a href="coffee_selection.html">Coffee Selection</a></li>
+            <li><a href="events_workshops.html">Events and Workshops</a></li>
+            <li><a href="offers_subscriptions.html">Special Offers and Subscriptions</a></li>
+            <li><a href="shopping_cart.html">Shopping Cart (<span id="cartCount">0</span>)</a></li>
+        </ul>
+    </nav>
+
+    <!--This is division class is an on-page search box-->
+    <div class="search-box">
+        <label for="pageSearch" class="visually-hidden">Search</label>
+        <input type="search" id="pageSearch" placeholder="Search...">
+    </div>
+</header>
+
+<main>
+
+<!--The main content of the events page-->
+    <h1 class="page-title">Events and Workshops</h1>
+    <p class="page-intro">Meet fellow coffee lovers, learn and taste.Choose an event then register.</p>
+
+    <!--A list of our upcoming events-->
+    <div class="Our Upcoming Events">
+        <div class="grid grid-2">
+
+        <!--The coffee tasting event-->
+        <article class="event-card">
+            <time class="date-badge" datetime="2026-11-14">
+                <span class="month">Nov</span>
+                <span class="day">14</span>
+            </time>
+            <img src="Images/coffee_tasting.jpg" alt="People coffee tasting at Bean Boutique">
+            <div class="info">
+                <h2>Coffee Tasting</h2>
+                <p>Try 5 different coffees sampled from around the world. Learn to describe the smell and taste of these coffees.</p>
+                <ul>
+                    <li>Saturday, 9:00 am</li>
+                    <li>At the Bean Boutique shop</li>
+                    <li>15 seats | Ksh 500</li>
+                </ul>
+                <a class="btn register-btn" href="#register" data-event="Coffee Tasting Session">Register</a>
+            </div>
+        </article>
+
+
+        <!--The brewing class event-->
+        <article class="event-card">
+            <time class="date-badge" datetime="2026-11-28">
+                <span class="month">Nov</span>
+                <span class="day">28</span>
+            </time>
+            <img src="Images/brewing-class.jpg" alt="A barista leading a brewing class">
+            <div class="info">
+                <h2>Home Brewing Class</h2>
+                <p>Learn how to use an AeroPress, a French press and a Pour-over Dripper. Take home a bag of coffee of your liking.</p>
+                <ul>
+                    <li>Saturday, 2:00 pm</li>
+                    <li>At the Bean Boutique shop</li>
+                    <li>10 seats | Ksh 1,000</li>
+                </ul>
+                <a class="btn register-btn" href="#register" data-event="Home Brewing Session" >Register</a>
+            </div>
+        </article>
+
+
+        <!--Learning latte class event-->
+        <article class="event-card">
+            <time class="date-badge" datetime="2026-12-12">
+                <span class="month">Dec</span>
+                <span class="day">12</span>
+            </time>
+            <img src="Images/latte-art.jpg" alt="A barista leading a latte art class">
+            <div class="info">
+                <h2>Latte Art Workshop</h2>
+                <p>Practise steaming milk and pouring hearts, leaves and rosettes.</p>
+                <ul>
+                    <li>Saturday, 10:00 am</li>
+                    <li>At the Bean Boutique shop</li>
+                    <li>12 seats | Ksh 200</li>
+                    </ul>
+                <a class="btn register-btn" href="#register" data-event="Latte art Session" >Register</a>
+            </div>
+        </article>
+
+
+        <!--Meet-the-roaster event-->
+        <article class="event-card">
+            <time class="date-badge" datetime="2026-12-19">
+                <span class="month">Dec</span>
+                <span class="day">19</span>
+            </time>
+            <img src="Images/meet-the-roaster.jpg" alt="A coffee roaster talking">
+            <div class="info">
+                <h2>Meet the Roaster</h2>
+                <p>Watch the roasting process, ask questions and try coffee fresh from the roaster.</p>
+                <ul>
+                    <li>Saturday, 11:00 am</li>
+                    <li>At the Bean Boutique shop</li>
+                    <li>10 seats | Ksh 2000</li>
+                </ul>
+                <a class="btn register-btn" href="#register" data-event="Meet the Roaster" >Register</a>
+            </div>
+        </article>
+    </div>
+    <p class="no-results" id="noResults" hidden>No event found.</p>
+    </div>
+
+    <!--The event registration form-->
+    <section class="section section-alt" id="register">
+        <h2>Register for an Event</h2>
+        <p>Fill in your details and get a seat confirmation via email.</p>
+        <form class="form register-form" action="mailto:events@beanboutique.com" method="post" enctype="text/plain">
+            <div class="form-row">
+                <div class="form-field">
+                    <label for="firstName">First name</label>
+                    <input type="text" id="firstName" name="first_name" autocomplete="given-name" required>
+                </div>
+                <div class="form-field">
+                    <label for="lastName">Last name</label>
+                    <input type="text" id="lastName" name="last_name" autocomplete="family-name" required>
+                </div>
+            </div>
+
+            <div class="form-field">
+                <label for="regEmail">Email address</label>
+                <input type="email" id="regEmail" name="email" autocomplete="email" required>
+            </div>
+
+            <div class="form-field">
+                <label for="eventChoice">Event</label>
+                <select name="event" id="eventChoice" required>
+                    <option value="">Choose an Event</option>
+                    <option>Coffee Tasting</option>
+                    <option>Meet the Roaster</option>
+                    <option>Home Brewing</option>
+                    <option>Latte Art Workshop</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn">Submit registration</button>
+        </form>
+    </section>
+
+</main>
+
+
+<!--Footer-->
+<footer class="site-footer">
+    <div class="footer-grid">
+        <!--Column 1 with quick links to the other pages-->
+        <div>
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="coffee_selection.html">Coffee Selection</a></li>
+                <li><a href="brewing_equipment.html">Brewing Equipment</a></li>
+                <li><a href="events_workshops.html">Events and Workshops</a></li>
+                <li><a href="offers_subscriptions.html">Special Offers and Subscriptions</a></li>
+            </ul>
+        </div>
+
+        <!--Column 2 with Bean Boutique's Contact Details-->
+        <div>
+            <h3>Contact Us</h3>
+            <p>hello@beanboutique.com</p>
+        </div>
+
+        <!--Column 3 with Social Media Links-->
+        <div>
+            <h3>Follow Us</h3>
+            <ul>
+                <li><a href="#beanboutique">Instagram</a></li>
+                <li><a href="#beanboutique">Facebook</a></li>
+            </ul>
+        </div>
+    </div>
+    <p>&copy; 2026 Bean Boutique.</p>
+</footer>
+</body>
+</html>
