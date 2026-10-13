@@ -233,6 +233,10 @@ if (cartBody) {
 document.querySelectorAll('.register-btn').forEach((button) => {
     button.addEventListener('click', () => {
         const choice = document.getElementById('eventChoice');
-        if (choice) choice.value = button.dataset.event;
+        if (choice) {
+            choice.value = button.dataset.event;
+            choice.scrollIntoView({behaviour: 'smooth', block:'center'})
+            choice.focus();
+        }
     });  
 });
